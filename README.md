@@ -1,5 +1,7 @@
 # PDFReferencesExtractor
 
+[![Build Status](https://travis-ci.org/helenocampos/PDFReferencesExtractor.svg?branch=master)](https://travis-ci.org/helenocampos/PDFReferencesExtractor)
+
 This is a simple use case for the [CERMINE](https://github.com/CeON/CERMINE) API. It uses the API to extract the references of a PDF article and outputs it to the screen.
 
 Simply clone the repository and build with Maven (mvn install) or download the latest release.
