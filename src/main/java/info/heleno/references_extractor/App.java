@@ -43,7 +43,7 @@ public class App {
                         String title = getField(entry.getAllFieldValues(BibEntryFieldType.TITLE));
                         String year = entry.getFirstFieldValue(BibEntryFieldType.YEAR);
                         String publication = getField(entry.getAllFieldValues(BibEntryFieldType.JOURNAL));
-                        System.out.println(title + ";" + year + ";" + publication);
+                        System.out.println("\""+title +"\""+ ";" +"\""+ year +"\""+ ";" +"\""+ publication+"\"");
                     }
                 } else if (args[0].equals("full")) {
                     for (BibEntry entry : references) {
