@@ -37,8 +37,8 @@ public class App {
                 ContentExtractor extractor = new ContentExtractor();
                 FileInputStream inputStream = new FileInputStream(args[1]);
                 extractor.setPDF(inputStream);
+                List<BibEntry> references = extractor.getReferences();
                 if (args[0].equals("short")) {
-                    List<BibEntry> references = extractor.getReferences();
                     for (BibEntry entry : references) {
                         String title = getField(entry.getAllFieldValues(BibEntryFieldType.TITLE));
                         String year = entry.getFirstFieldValue(BibEntryFieldType.YEAR);
@@ -46,7 +46,9 @@ public class App {
                         System.out.println(title + ";" + year + ";" + publication);
                     }
                 } else if (args[0].equals("full")) {
-                    System.out.println(extractor.getRawFullText());
+                    for (BibEntry entry : references) {
+                        System.out.println(entry.toBibTeX());
+                    }
                 }
             }
 
